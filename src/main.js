@@ -3,7 +3,7 @@ import {fork} from 'child_process';
 
 require('dotenv').config();
 
-const mqttJobs = [
+const appJobs = [
     {
         name: 'open',
         path: `${__dirname}\\bin\\app.js`,
@@ -11,11 +11,9 @@ const mqttJobs = [
 ];
 
 const setup = async () => {};
-const forkJobs = mqttJobs;
+const forkJobs = appJobs;
 
-// setup MySQL DB and table.
 
-// fork new child process if any child process is closed
 const forkNew = (jobConfig) => {
     let jobTofork = forkJobs.find((job) => job.name === jobConfig.name);
     jobTofork.process = fork(jobTofork.path);
