@@ -1,0 +1,14 @@
+{
+  "presets": ["@babel/env"],
+  "plugins": [
+    "@babel/plugin-transform-regenerator",
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-proposal-export-default-from",
+    [
+      "module-resolver", {
+          "root": ["./"],
+      }
+    ]
+  ]
+}

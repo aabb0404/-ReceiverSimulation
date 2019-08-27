@@ -1,0 +1,78 @@
+{
+  "private": true,
+  "name": "pi-",
+  "version": "2.7.1",
+  "updateDate": "2019-02-26",
+  "description": "PI Solutions web-app",
+  "mapVersion": "v1",
+  "main": "server.js",
+  "scripts": {
+    "start": "babel-node ./src/main.js",
+    "lint": "eslint src --fix",
+    "build": "webpack"
+  },
+  "engines": {
+    "node": ">=9.0.0"
+  },
+  "dependencies": {
+    "canvas": "^2.5.0",
+    "d3": "^5.9.7",
+    "dotenv": "^6.2.0",
+    "eslint": "^5.14.1",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "helmet": "^3.20.0",
+    "leaflet": "^1.5.1",
+    "mathjs": "^6.0.3",
+    "moment": "^2.24.0",
+    "mqtt": "^3.0.0",
+    "node-kmeans": "^1.1.9",
+    "path": "^0.12.7",
+    "prettier": "^1.16.4",
+    "redis": "^2.8.0",
+    "redlock": "^3.1.2",
+    "request": "^2.88.0",
+    "socket.io": "^2.2.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-regenerator": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-eslint": "^8.1.2",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "eslint": "^4.14.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-import-resolver-babel-module": "^5.0.0-beta.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.5.1",
+    "jsdom": "^15.1.1",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.scss": [
+      "stylelint --syntax=scss --fix",
+      "git add"
+    ]
+  }
+}
